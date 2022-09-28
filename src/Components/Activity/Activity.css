@@ -1,0 +1,29 @@
+.display-container {
+    box-shadow: 2px 2px 4px gray;
+    width: 250px;
+    height: 400px;
+    padding: 12px;
+    border-radius: 8px;
+    position: relative;
+}
+
+
+
+.display-container img {
+    width: 250px;
+    height: 220px;
+    border-radius: 5px;
+}
+
+.btn-cart {
+    width: 200px;
+    background-color: #1dd1a1;
+    position: absolute;
+    bottom: 20px;
+    margin-left: 25px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 17px;
+}
