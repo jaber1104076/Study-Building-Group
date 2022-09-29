@@ -27,6 +27,8 @@
 .cart-conatiner {
     background-color: #dfe4ea;
     padding: 30px 50px;
+    border-radius: 10px;
+
 
 }
 
@@ -35,7 +37,7 @@
     grid-template-columns: repeat(3, 1fr);
     column-gap: 10px;
     row-gap: 20px;
-    box-shadow: 2px 2px 4px gray;
+    /* box-shadow: 2px 2px 4px gray; */
 }
 
 .profile {
@@ -51,14 +53,57 @@
     margin-right: 5px;
 }
 
+.info {
+    background-color: bisque;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+}
+
+.my-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+}
+
+.break-button {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-break {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: royalblue;
+    border: none;
+    color: white;
+}
+
+.input-field {
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 2px 2px 2px cadetblue;
+}
+
+.activity-button {
+    margin-top: 15px;
+    padding: 15px 30px;
+    border-radius: 5px;
+    color: white;
+    background-color: royalblue;
+    font-size: 15px;
+    border: none;
+}
+
 @media only screen and (max-width:688px) {
-    .conatiner {
+    .main-activity {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
     }
 
-    .main-activity {
-        display: grid;
-        grid-template: repeat(1, 1fr);
-    }
 }
