@@ -3,6 +3,7 @@ import logo from '../../image/logo.jpg';
 import Activity from '../Activity/Activity';
 import jaber from '../../image/jaber.jpg';
 import './Activities.css';
+import Swal from 'sweetalert2'
 const Activities = () => {
     const [goals, setGoal] = useState([])
     const [time, setTime] = useState();
@@ -17,6 +18,13 @@ const Activities = () => {
     const handleBreakTime = (time) => {
         setTime(time);
         //return time;
+    }
+    const handleActivity = (id) => {
+        Swal.fire(
+            'Good job!',
+            'You clicked the button!',
+            'success'
+        )
     }
 
     return (
@@ -69,7 +77,7 @@ const Activities = () => {
                         <h2 className='title'>Study Details</h2>
                         <input type="text" placeholder='study time' className='input-field' value={study} />
                         <input type="text" placeholder='Break-time' className='input-field' value={time} onChange={() => handleBreakTime} />
-                        <button className='activity-button'>Activity Completed</button>
+                        <button className='activity-button' onClick={() => handleActivity()}>Activity Completed</button>
                     </div>
                 </div>
 
