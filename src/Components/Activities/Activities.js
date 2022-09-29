@@ -73,10 +73,8 @@ const Activities = () => {
                     </div>
                     <div className="study-details">
                         <h2 className='title'>Study Details</h2>
-                        {/* <input type="text" placeholder='study time' className='input-field' value={study} /> */}
-                        <span>Study Time : {study} second</span><br />
-                        {/* <input type="text" placeholder='Break-time' className='input-field' value={time} onChange={() => handleBreakTime} /> */}
-                        <span>Break Time : {time} second</span>
+                        <span className='study-time'>Study Time : {study} second</span>
+                        <span className='study-time'>Break Time : {time} second</span>
                         <button className='activity-button' onClick={() => handleActivity()}>Activity Completed</button>
                     </div>
                 </div>
