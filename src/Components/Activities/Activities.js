@@ -1,16 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import logo from '../../image/logo.jpg';
 import Activity from '../Activity/Activity';
-import jaber from '../../image/jaber.jpg'
-import './Activities.css'
+import jaber from '../../image/jaber.jpg';
+import './Activities.css';
 const Activities = () => {
     const [goals, setGoal] = useState([])
+    const [time, setTime] = useState();
+    const [study, setStudy] = useState(0);
 
     useEffect(() => {
         fetch('Study.json')
             .then(res => res.json())
             .then(data => setGoal(data))
     }, [])
+
+    const handleBreakTime = (time) => {
+        setTime(time);
+        //return time;
+    }
 
     return (
         <div>
@@ -24,6 +31,9 @@ const Activities = () => {
                         goals.map(goal => <Activity
                             goal={goal}
                             setGoal={setGoal}
+                            key={goal.id}
+                            study={study}
+                            setStudy={setStudy}
                         ></Activity>)
                     }
                 </div>
@@ -49,16 +59,16 @@ const Activities = () => {
                     <div className="break-info">
                         <h2 className='title'>Add a break</h2>
                         <div className="break-button">
-                            <button className='btn-break'>10s</button>
-                            <button className='btn-break'>20s</button>
-                            <button className='btn-break'>30s</button>
-                            <button className='btn-break'>40s</button>
+                            <button className='btn-break' onClick={() => handleBreakTime(10)}>10s</button>
+                            <button className='btn-break' onClick={() => handleBreakTime(20)}>20s</button>
+                            <button className='btn-break' onClick={() => handleBreakTime(30)}>30s</button>
+                            <button className='btn-break' onClick={() => handleBreakTime(40)}>40s</button>
                         </div>
                     </div>
                     <div className="study-details">
                         <h2 className='title'>Study Details</h2>
-                        <input type="text" placeholder='study time' className='input-field' />
-                        <input type="text" placeholder='Break-time' className='input-field' />
+                        <input type="text" placeholder='study time' className='input-field' value={study} />
+                        <input type="text" placeholder='Break-time' className='input-field' value={time} onChange={() => handleBreakTime} />
                         <button className='activity-button'>Activity Completed</button>
                     </div>
                 </div>
