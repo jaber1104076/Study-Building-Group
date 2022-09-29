@@ -101,13 +101,13 @@
     border-radius: 5px;
     color: white;
     background-color: #1dd1a1;
-    font-size: 15px;
+    font-size: 18px;
     border: none;
 }
 
 .question-title {
     text-align: center;
-    color: #8854d0;
+    color: #10ac84;
 }
 
 .ans-cart {

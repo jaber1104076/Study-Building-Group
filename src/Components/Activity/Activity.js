@@ -1,8 +1,6 @@
-import React from 'react';
 import './Activity.css'
 const Activity = ({ goal, onAddToList }) => {
     const { img, name, time } = goal;
-
     return (
         <div className='display-container'>
             <img src={img} alt="" />

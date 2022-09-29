@@ -14,27 +14,17 @@ const Activities = () => {
             .then(res => res.json())
             .then(data => setGoal(data))
     }, [])
-    //const { id } = goals;
     const handleBreakTime = (time) => {
         setTime(time);
-        //setBrTime();
-        const brTime = {
-            time
-        }
-        //console.log(time);
-        const getTime = localStorage.getItem("Time")
-        const timeValue = JSON.parse(getTime)
-        if (timeValue) {
-            localStorage.setItem("Time", JSON.stringify([...timeValue, brTime],))
-        }
-        else {
-            localStorage.setItem("Time", JSON.stringify([brTime]))
-        }
+        localStorage.setItem("Time", time)
     }
 
     useEffect(() => {
-        const localStorageData = localStorage.getItem("Time")
-        console.log(localStorageData)
+        const brTime = localStorage.getItem("Time")
+        if (brTime) {
+            setTime(brTime)
+        }
+
     }, [])
 
     const handleActivity = (id) => {
