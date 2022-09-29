@@ -28,8 +28,6 @@
     background-color: #dfe4ea;
     padding: 25px 50px;
     border-radius: 10px;
-
-
 }
 
 .main-activity {
@@ -113,7 +111,7 @@
 }
 
 .ans-cart {
-    width: 800px;
+    width: 500px;
     box-shadow: 1px 1px 8px 2px gray;
     text-align: center;
     margin: auto;
@@ -141,10 +139,11 @@
     .list-conatiner {
         padding: 0px 50px;
         margin-top: 20px;
+        width: 300px;
     }
 
     .ans-cart {
-        width: 300px;
+        width: 250px;
 
     }
 }
