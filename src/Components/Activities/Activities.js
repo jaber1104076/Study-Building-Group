@@ -6,7 +6,7 @@ import './Activities.css';
 import Swal from 'sweetalert2'
 const Activities = () => {
     const [goals, setGoal] = useState([])
-    const [time, setTime] = useState();
+    const [time, setTime] = useState(0);
     const [study, setStudy] = useState(0);
 
     useEffect(() => {
@@ -38,10 +38,8 @@ const Activities = () => {
                     {
                         goals.map(goal => <Activity
                             goal={goal}
-                            setGoal={setGoal}
                             key={goal.id}
-                            study={study}
-                            setStudy={setStudy}
+                            onAddToList={(time) => setStudy(study + time)}
                         ></Activity>)
                     }
                 </div>
@@ -75,8 +73,10 @@ const Activities = () => {
                     </div>
                     <div className="study-details">
                         <h2 className='title'>Study Details</h2>
-                        <input type="text" placeholder='study time' className='input-field' value={study} />
-                        <input type="text" placeholder='Break-time' className='input-field' value={time} onChange={() => handleBreakTime} />
+                        {/* <input type="text" placeholder='study time' className='input-field' value={study} /> */}
+                        <span>Study Time : {study} second</span><br />
+                        {/* <input type="text" placeholder='Break-time' className='input-field' value={time} onChange={() => handleBreakTime} /> */}
+                        <span>Break Time : {time} second</span>
                         <button className='activity-button' onClick={() => handleActivity()}>Activity Completed</button>
                     </div>
                 </div>
